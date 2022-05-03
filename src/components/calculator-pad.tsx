@@ -1,16 +1,18 @@
 import React from "react";
-import { View, Text, Pressable } from "react-native";
+import { View } from "react-native";
+import { Button, withTheme } from "react-native-paper";
 import calculatorPad from "../styles/calculator-pad";
 import { PadButtonType } from "../types/pad-buttons";
 
 type props = {
   onClick: (value: string) => void;
   buttons: PadButtonType[][];
+  theme: any;
 };
 
 const CalculatorPadComponent = ({ onClick, buttons }: props) => {
   return (
-    <View style={calculatorPad.container}>
+    <View style={calculatorPad.content}>
       {
         buttons.map((row, i) => {
           return (
@@ -18,23 +20,15 @@ const CalculatorPadComponent = ({ onClick, buttons }: props) => {
               {
                 row.map((button, j) => {
                   return (
-                    button.available ? 
-                    (
-                      <Pressable
-                        key={j}
-                        style={[calculatorPad.button, { backgroundColor: button.backgroundColor }]}
-                        onPress={() => onClick(button.value)}
-                      >
-                        {button.value}
-                      </Pressable>
-                    ) : (
-                      <Text 
-                        key={j}
-                        style={[calculatorPad.button, { backgroundColor: button.backgroundColor }]}
-                      >
-                        {button.value}
-                      </Text>
-                    )
+                    <Button
+                      mode="contained"
+                      disabled={!button.available}
+                      key={j}
+                      style={calculatorPad.button}
+                      onPress={() => onClick(button.value)}
+                    >
+                      {button.value} {button.available ? '' : '*'}
+                    </Button>
                   )
                 })
               }
@@ -46,4 +40,4 @@ const CalculatorPadComponent = ({ onClick, buttons }: props) => {
   );
 }
 
-export default CalculatorPadComponent;
+export default withTheme(CalculatorPadComponent);

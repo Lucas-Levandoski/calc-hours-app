@@ -1,26 +1,44 @@
 import { StyleSheet } from 'react-native';
+
 export default StyleSheet.create({
-  resultContainer: {
-    width: '100%',
-    height: '30vh',
-    padding: '1%',
-    paddingBottom: '4%',
+  content: {
+    display: 'flex',
+    flexGrow: 1,
+    padding: '0.5rem'
   },
-  resultInput: {
-    fontSize: 40,
-    textAlign: 'right',
-    justifyContent: 'flex-start',
-    color: '#fff',
-    fontWeight: 'bold',
-    backgroundColor: '#0a0',
-    width: '100%',
+  displayContainer: {
+    display: 'flex',
+    padding: 2,
+    position: 'relative',
+  },
+  displaySideMenuContainer: {
+    position: 'absolute',
+    right: 2.5,
+    bottom: 0,
+    display: 'flex',
+    flexDirection: 'column',
     height: '100%',
-    borderRadius: 10,
-    borderColor: '#000',
-    borderWidth: 2,
+    width: 60,
+    opacity: 0.8,
+  },
+  displaySideMenuContent: {
+    display: 'flex',
+    flexGrow: 1,
+    borderRadius: 3,
+    margin: 'auto',
+    marginTop: 9,
+    marginBottom: 2.5,
+    width: '100%',
+    justifyContent: 'space-around',
+    textAlign: 'center',
+  },
+  displayTextInput: {
+    textAlign: 'right',
+    height: '30vh',
+    paddingRight: 60,
   },
   padContainer: {
-    width: '100%',
-    height: '70vh',
+    display: 'flex',
+    flexGrow: 1,
   },
 });

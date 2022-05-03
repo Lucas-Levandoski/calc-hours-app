@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, Pressable } from 'react-native';
+import React, { useState } from 'react';
+import { Keyboard, View } from 'react-native';
 import { ReturnTypes } from '../utils/enums';
 import { SubmitEquation } from '../utils/submit-equation';
 import CalculatorPadComponent from '../components/calculator-pad';
-import { PadButtonType } from '../types/pad-buttons';
-import { PaidPadButtons } from '../utils/pad-buttons';
 import calculatorView from '../styles/calculator-view';
 import { useToast } from 'react-native-fast-toast';
+import { Button, RadioButton, TextInput, withTheme } from 'react-native-paper';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { DotsThree, Backspace } from 'phosphor-react';
 
 
-const CalculatorView = () => {
+const CalculatorView = ({ theme }: any) => {
   const toast = useToast();
+  const userType = useSelector((state: RootState) => state.userType.value);
+  const [displayType, setDisplayType] = useState(ReturnTypes.hours);
   const [equation, setEquation] = useState<string>('');
-  const [builtButtons, setBuiltButtons] = useState<PadButtonType[][]>(); //TODO - make this a class
 
   const handleSubmit = (equation: string) => {
     try {
@@ -36,18 +39,50 @@ const CalculatorView = () => {
     }
   }
 
+  const backSpace = () => {
+    setEquation(equation.slice(0, -1));
+  }
+
   return (
-    <View>
-      <View style={calculatorView.resultContainer}>
-        <Text style={calculatorView.resultInput}>
-          {equation}
-        </Text>
+    <View style={calculatorView.content}>
+      <View style={calculatorView.displayContainer}>
+        <TextInput
+          style={calculatorView.displayTextInput}
+          mode='outlined'
+          multiline={true}
+          onChange={(e) => setEquation(e.nativeEvent.text)}
+          value={equation}
+          autoComplete='off'
+          onFocus={() => Keyboard.dismiss()}
+        />
+        {/* <View style={calculatorView.displaySideMenuContainer}>
+          <View style={[
+            calculatorView.displaySideMenuContent, 
+            { backgroundColor: theme.colors.accent }
+          ]}>
+            <Button 
+              onPress={() => backSpace()}
+            >
+              <Backspace size={30} />
+            </Button>
+            <RadioButton 
+              value={ReturnTypes.hours}
+              status={displayType === ReturnTypes.hours ? 'checked' : 'unchecked'}
+              onPress={() => setDisplayType(ReturnTypes.hours)}
+            />
+            <RadioButton 
+              value={ReturnTypes.hours}
+              status={displayType === ReturnTypes.hours ? 'checked' : 'unchecked'}
+              onPress={() => setDisplayType(ReturnTypes.hours)}
+            />
+          </View>
+        </View> */}
       </View>
       <View style={calculatorView.padContainer}>
-        <CalculatorPadComponent onClick={handleClick} buttons={PaidPadButtons} />
+        <CalculatorPadComponent onClick={handleClick} buttons={userType.buttons} />
       </View>
     </View>
   );
 }
 
-export default CalculatorView;
+export default withTheme(CalculatorView);

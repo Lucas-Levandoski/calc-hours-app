@@ -1,18 +1,37 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import BottomTabBarComponent from '../components/bottom-tab-bar';
+import { useState } from 'react';
 import CalculatorView from '../views/calculator';
 import SettingsView from '../views/settings';
+import { BottomNavigation, withTheme } from 'react-native-paper';
+import { Calculator, Faders, Airplane } from 'phosphor-react';
 
 
-const BottomTabs = createBottomTabNavigator();
+const BottomRouter = ({ theme }: any) => {
+  const [index, setIndex] = useState(0);
+  const routes = [
+    { key: 'Calculator', title: 'Calculator', color: '#3F51B5' ,icon: () => (<Calculator color={theme.colors.primary} size={80}/>) },
+    { key: 'Settings', title: 'Settings', color: '#009688', icon: () => (<Faders color={theme.colors.primary} size={80}/>) },
+    { key: 'Settings', title: 'Test', color: '#11a35a', icon: () => (<Airplane color={theme.colors.primary} size={80}/>) },
+    { key: 'Settings', title: 'Testing', color: '#009688', icon: () => (<Calculator color={theme.colors.primary} size={80}/>) },
+  ];
 
-const BottomRouter = () => {
+
+  const renderScene = ({ route, jumpTo } : any) => {
+    switch (route.key) {
+      case 'Calculator':
+        return <CalculatorView />;
+      case 'Settings':
+        return <SettingsView />;
+    }
+  };
+
   return (
-    <BottomTabs.Navigator initialRouteName='Calculator' tabBar={BottomTabBarComponent} screenOptions={{headerShown: false}}>
-      <BottomTabs.Screen name='Calculator' component={CalculatorView} />
-      <BottomTabs.Screen name='Settings' component={SettingsView} />
-    </BottomTabs.Navigator>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      sceneAnimationEnabled={true}
+      renderScene={renderScene}
+    />
   );
 }
 
-export default BottomRouter
+export default withTheme(BottomRouter);

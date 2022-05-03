@@ -1,46 +1,92 @@
 import { PadButtonType } from "../types/pad-buttons"
+import { PadButtonTypes } from "./enums";
 
 export const PaidPadButtons: PadButtonType[][] = [
   // row 1
   [
-    { available: true, value: '1', backgroundColor: '#00a680', color: '#fff'}, 
-    { available: true, value: '2', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '3', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 'd', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '1', type: PadButtonTypes.number}, 
+    { available: true, value: '2', type: PadButtonTypes.number},
+    { available: true, value: '3', type: PadButtonTypes.number},
+    { available: true, value: 'd', type: PadButtonTypes.operator},
   ],
   // row 2
   [
-    { available: true, value: '4', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '5', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '6', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 'h', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '4', type: PadButtonTypes.number},
+    { available: true, value: '5', type: PadButtonTypes.number},
+    { available: true, value: '6', type: PadButtonTypes.number},
+    { available: true, value: 'h', type: PadButtonTypes.operator},
   ],
   // row 3
   [
-    { available: true, value: '7', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '8', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '9', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 'm', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '7', type: PadButtonTypes.number},
+    { available: true, value: '8', type: PadButtonTypes.number},
+    { available: true, value: '9', type: PadButtonTypes.number},
+    { available: true, value: 'm', type: PadButtonTypes.operator},
   ],
   // row 4
   [
-    { available: true, value: '+', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '0', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '-', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 's', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '+', type: PadButtonTypes.operator},
+    { available: true, value: '0', type: PadButtonTypes.number},
+    { available: true, value: '-', type: PadButtonTypes.operator},
+    { available: true, value: 's', type: PadButtonTypes.operator},
   ],
   // row 5
   [
-    { available: true, value: '*', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '/', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '(', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: ')', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '*', type: PadButtonTypes.operator},
+    { available: true, value: '/', type: PadButtonTypes.operator},
+    { available: true, value: '(', type: PadButtonTypes.operator},
+    { available: true, value: ')', type: PadButtonTypes.operator},
   ],
   // row 6
   [
-    { available: true, value: '=', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: '.', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 'c', backgroundColor: '#00a680', color: '#fff'},
-    { available: true, value: 'e', backgroundColor: '#00a680', color: '#fff'},
+    { available: true, value: '=', type: PadButtonTypes.special},
+    { available: true, value: '.', type: PadButtonTypes.operator},
+    { available: true, value: 'c', type: PadButtonTypes.operator},
+    { available: true, value: 'e', type: PadButtonTypes.operator},
+  ]
+];
+
+export const FreePadButtons: PadButtonType[][] = [
+  // row 1
+  [
+    { available: false, value: '1', type: PadButtonTypes.number}, 
+    { available: false, value: '2', type: PadButtonTypes.number},
+    { available: false, value: '3', type: PadButtonTypes.number},
+    { available: false, value: 'd', type: PadButtonTypes.operator},
+  ],
+  // row 2
+  [
+    { available: true, value: '4', type: PadButtonTypes.number},
+    { available: true, value: '5', type: PadButtonTypes.number},
+    { available: true, value: '6', type: PadButtonTypes.number},
+    { available: true, value: 'h', type: PadButtonTypes.operator},
+  ],
+  // row 3
+  [
+    { available: true, value: '7', type: PadButtonTypes.number},
+    { available: true, value: '8', type: PadButtonTypes.number},
+    { available: true, value: '9', type: PadButtonTypes.number},
+    { available: true, value: 'm', type: PadButtonTypes.operator},
+  ],
+  // row 4
+  [
+    { available: true, value: '+', type: PadButtonTypes.operator},
+    { available: true, value: '0', type: PadButtonTypes.number},
+    { available: true, value: '-', type: PadButtonTypes.operator},
+    { available: true, value: 's', type: PadButtonTypes.operator},
+  ],
+  // row 5
+  [
+    { available: true, value: '*', type: PadButtonTypes.operator},
+    { available: true, value: '/', type: PadButtonTypes.operator},
+    { available: true, value: '(', type: PadButtonTypes.operator},
+    { available: true, value: ')', type: PadButtonTypes.operator},
+  ],
+  // row 6
+  [
+    { available: true, value: '=', type: PadButtonTypes.special},
+    { available: true, value: '.', type: PadButtonTypes.operator},
+    { available: true, value: 'c', type: PadButtonTypes.operator},
+    { available: true, value: 'e', type: PadButtonTypes.operator},
   ]
 ];
