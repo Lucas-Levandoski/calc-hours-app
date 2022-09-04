@@ -9,18 +9,18 @@ type props = {
 }
 
 const ThemesProvider = ({ children }: props) => {
-  const theme = useSelector((state: RootState) => state.theme.value)
-  const [ paperTheme, setPaperTheme] = useState<any>(DarkTheme); 
+    const theme = useSelector((state: RootState) => state.theme.value);
+    const [ paperTheme, setPaperTheme] = useState(DarkTheme); 
 
-  useEffect(() => {
-    setPaperTheme(theme === 'dark' ? DarkTheme : LightTheme);
-  }, [theme])
+    useEffect(() => {
+        setPaperTheme(theme === 'dark' ? DarkTheme : LightTheme);
+    }, [theme]);
 
-  return (
-    <PaperProvider theme={paperTheme}>
-      {children}
-    </PaperProvider>
-  );
-}
+    return (
+        <PaperProvider theme={paperTheme}>
+            {children}
+        </PaperProvider>
+    );
+};
 
 export default ThemesProvider;
