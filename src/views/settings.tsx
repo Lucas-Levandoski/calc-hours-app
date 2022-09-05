@@ -1,16 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Button, withTheme } from 'react-native-paper';
-import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'react-native-paper';
+import { useDispatch } from 'react-redux';
 import { setDarkTheme, setLightTheme } from '../redux/reducers/theme';
 import { setFreeUser, setPaidUser } from '../redux/reducers/user-type';
-import { RootState } from '../redux/store';
 
-type props = {
-  theme: any;
-}
 
-const SettingsView = ({ theme }: props) => {
+export const SettingsView = () => {
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +17,7 @@ const SettingsView = ({ theme }: props) => {
       <Button onPress={() => dispatch(setLightTheme())}>
         set Light theme
       </Button>
-      
+
       <Button onPress={() => dispatch(setFreeUser())}>
         set Free User
       </Button>
@@ -30,6 +26,4 @@ const SettingsView = ({ theme }: props) => {
       </Button>
     </View>
   );
-}
-
-export default withTheme(SettingsView);
+};

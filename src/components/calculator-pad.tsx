@@ -1,13 +1,14 @@
-import React from "react";
-import { View } from "react-native";
-import { Button, withTheme } from "react-native-paper";
-import calculatorPad from "../styles/calculator-pad";
-import { PadButtonType } from "../types/pad-buttons";
+import React from 'react';
+import { View } from 'react-native';
+import { Button, withTheme } from 'react-native-paper';
+import { Theme } from 'react-native-paper/lib/typescript/types';
+import calculatorPad from '../styles/calculator-pad';
+import { PadButtonType } from '../types/pad-buttons';
 
 type props = {
   onClick: (value: string) => void;
   buttons: PadButtonType[][];
-  theme: any;
+  theme: Theme;
 };
 
 const CalculatorPadComponent = ({ onClick, buttons }: props) => {
@@ -29,15 +30,15 @@ const CalculatorPadComponent = ({ onClick, buttons }: props) => {
                     >
                       {button.value} {button.available ? '' : '*'}
                     </Button>
-                  )
+                  );
                 })
               }
             </View>
-          )
+          );
         })
       }
     </View>
   );
-}
+};
 
 export default withTheme(CalculatorPadComponent);
