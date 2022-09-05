@@ -40,19 +40,19 @@ export default function SecondsTo(equations: string[], resultType: ReturnTypes) 
   let result = '';
 
   switch (resultType) {
-    case ReturnTypes.days:
-      result = SecondsToDays(EquationToSeconds(equations));
-      break;
-    case ReturnTypes.hours:
-      result = SecondsToHours(EquationToSeconds(equations));
-      break;
-    case ReturnTypes.minutes:
-      result = SecondsToMinutes(EquationToSeconds(equations));
-      break;
-    case ReturnTypes.seconds:
-      result = SecondsToSeconds(EquationToSeconds(equations));
-      break;
-    default:
+  case ReturnTypes.days:
+    result = SecondsToDays(EquationToSeconds(equations));
+    break;
+  case ReturnTypes.hours:
+    result = SecondsToHours(EquationToSeconds(equations));
+    break;
+  case ReturnTypes.minutes:
+    result = SecondsToMinutes(EquationToSeconds(equations));
+    break;
+  case ReturnTypes.seconds:
+    result = SecondsToSeconds(EquationToSeconds(equations));
+    break;
+  default:
   }
 
   return result;
