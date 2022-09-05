@@ -21,10 +21,10 @@ const BottomRouter = ({ theme }: props) => {
 
   const renderScene = ({ route, } : any) => {
     switch (route.key) {
-    case 'Calculator':
-      return <CalculatorView />;
-    case 'Settings':
-      return <SettingsView />;
+      case 'Calculator':
+        return <CalculatorView />;
+      case 'Settings':
+        return <SettingsView />;
     }
   };
 
