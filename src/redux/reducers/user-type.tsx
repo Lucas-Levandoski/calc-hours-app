@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { PaidPadButtons, FreePadButtons } from '../../utils/pad-buttons';
-import { PadButtonType } from "../../types/pad-buttons"
+import { PadButtonType } from '../../types/pad-buttons';
 
 type UserType = {
   buttons: PadButtonType[][];
@@ -8,11 +8,11 @@ type UserType = {
 
 const paidUser: UserType = {
   buttons: PaidPadButtons
-}
+};
 
 const freeUser:UserType = {
   buttons: FreePadButtons
-}
+};
 
 
 export const userTypeSlice = createSlice({
@@ -21,8 +21,8 @@ export const userTypeSlice = createSlice({
     value: paidUser,
   },
   reducers: {
-    setPaidUser: (state) => { state.value = paidUser },
-    setFreeUser: (state) => { state.value = freeUser },
+    setPaidUser: (state) => { state.value = paidUser; },
+    setFreeUser: (state) => { state.value = freeUser; },
   }
 });
 

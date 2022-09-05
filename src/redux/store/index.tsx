@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 import themeReducer from '../reducers/theme';
 import userTypeReducer from '../reducers/user-type';
 

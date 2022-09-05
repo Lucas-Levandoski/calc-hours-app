@@ -1,5 +1,5 @@
-import { PadButtonType } from "../types/pad-buttons"
-import { PadButtonTypes } from "./enums";
+import { PadButtonType } from '../types/pad-buttons';
+import { PadButtonTypes } from './enums';
 
 export const PaidPadButtons: PadButtonType[][] = [
   // row 1

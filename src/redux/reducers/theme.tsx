@@ -6,8 +6,8 @@ export const themeSlice = createSlice({
     value: 'light',
   },
   reducers: {
-    setDarkTheme: (state) => { state.value = 'dark' },
-    setLightTheme: (state) => { state.value = 'light' }
+    setDarkTheme: (state) => { state.value = 'dark'; },
+    setLightTheme: (state) => { state.value = 'light'; }
   }
 });
 

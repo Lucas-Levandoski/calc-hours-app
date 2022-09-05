@@ -1,13 +1,13 @@
-import { ReturnTypes } from "./enums";
-import SecondsTo from "./seconds-to";
-import SplitEquation from "./split-equation";
-import ValidateInput from "./validate-input";
+import { ReturnTypes } from './enums';
+import SecondsTo from './seconds-to';
+import SplitEquation from './split-equation';
+import ValidateInput from './validate-input';
 
 
 export const SubmitEquation = (calcInput: string, resultType: ReturnTypes): string => { 
 
   if (!calcInput) {
-    throw new Error("Please enter an equation");
+    throw new Error('Please enter an equation');
   }
   
   const preparedEquation = SplitEquation(calcInput);
@@ -19,4 +19,4 @@ export const SubmitEquation = (calcInput: string, resultType: ReturnTypes): stri
   
   const result = SecondsTo(preparedEquation, resultType);
   return result;
-}
+};

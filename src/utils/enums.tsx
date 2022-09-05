@@ -9,7 +9,7 @@ export enum KeypadTypes {
   calc = 'calc',
   timeInBetween = 'timeInBetween',
 }
-  
+
 export enum PadButtonTypes {
   number = 'number',
   operator = 'operator',
