@@ -8,13 +8,9 @@ import { useToast } from 'react-native-fast-toast';
 import { TextInput, withTheme } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { Theme } from 'react-native-paper/lib/typescript/types';
 
-type props = {
-  theme: Theme
-}
 
-const CalculatorView = ({ theme }: props) => {
+const CalculatorView = () => {
   const toast = useToast();
   const userType = useSelector((state: RootState) => state.userType.value);
   const [equation, setEquation] = useState<string>('');
@@ -69,4 +65,4 @@ const CalculatorView = ({ theme }: props) => {
   );
 };
 
-export default withTheme(CalculatorView);
+export default CalculatorView;

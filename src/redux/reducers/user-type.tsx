@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { PaidPadButtons, FreePadButtons } from '../../utils/pad-buttons';
 import { PadButtonType } from '../../types/pad-buttons';
 
@@ -14,6 +14,14 @@ const freeUser:UserType = {
   buttons: FreePadButtons
 };
 
+const getUserTypeById = createAsyncThunk(
+  'user-type/userType',
+  async (userId: number) => {
+    const res = await fetch('testjson/local', { method: 'get', headers: { 'userId': userId.toString() }, }).then( data => data.json());
+    return res;
+  }
+);
+
 
 export const userTypeSlice = createSlice({
   name: 'user-type',
@@ -23,6 +31,11 @@ export const userTypeSlice = createSlice({
   reducers: {
     setPaidUser: (state) => { state.value = paidUser; },
     setFreeUser: (state) => { state.value = freeUser; },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(getUserTypeById.fulfilled, (state, action) => {
+      state.value = action.payload;
+    });
   }
 });
 
