@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { Keyboard, View } from 'react-native';
-import { ReturnTypes } from '../utils/enums';
-import { SubmitEquation } from '../utils/submit-equation';
-import CalculatorPadComponent from '../components/calculator-pad';
-import ReturnTypePadComponent from '../components/return-type-pad';
-import calculatorView from '../styles/calculator-view';
 import { useToast } from 'react-native-fast-toast';
 import { TextInput } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+
+import calculatorView from '../styles/calculator-view';
+
+import { ReturnTypes } from '../utils/enums';
+import { SubmitEquation } from '../utils/submit-equation';
+import CalculatorPadComponent from '../components/calculator-pad';
+import ReturnTypePadComponent from '../components/return-type-pad';
+import HistoryPadComponent from '../components/history-pad';
 
 
 const CalculatorView = () => {
@@ -56,7 +59,7 @@ const CalculatorView = () => {
         />
       </View>
       <View style={calculatorView.historyPadContainer}>
-        
+        <HistoryPadComponent onClick={console.log}/>
       </View>
       <View style={calculatorView.returnTypePadContainer}>
         <ReturnTypePadComponent onClick={console.log}/>
