@@ -13,6 +13,7 @@ import { SubmitEquation } from '../utils/submit-equation';
 import CalculatorPadComponent from '../components/calculator-pad';
 import ReturnTypePadComponent from '../components/return-type-pad';
 import HistoryPadComponent from '../components/history-pad';
+import CalculatorDisplay from '../components/calculator-display';
 
 
 const CalculatorView = () => {
@@ -50,19 +51,11 @@ const CalculatorView = () => {
     <View style={calculatorView.content}>
       <View style={calculatorView.topContainer}>
         <View style={calculatorView.displayContainer}>
-          <TextInput
-            style={calculatorView.displayTextInput}
-            mode='outlined'
-            multiline={true}
-            onChange={(e) => setEquation(e.nativeEvent.text)}
-            value={equation}
-            autoComplete='off'
-            onFocus={() => Keyboard.dismiss()}
-          />
+          <CalculatorDisplay onClick={console.log} />
         </View>
       </View>
       <LinearGradient 
-        colors={['#A430FF', '#F318AD', '#FF2171']}  
+        colors={['#A430FF', '#F318AD', '#FF2171']}
         style={calculatorView.hr}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 1}}
