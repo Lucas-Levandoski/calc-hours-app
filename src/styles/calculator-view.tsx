@@ -5,6 +5,18 @@ export default StyleSheet.create({
     display: 'flex',
     flexGrow: 1,
   },
+  topContainer: {
+    height: '27.25vh',
+    backgroundColor: '#EAEBED'
+  },
+  hr: {
+    height: '1.5vh',
+    width: '100%'
+  },
+  bottomContainer: {
+    height: '71.25vh',
+    backgroundColor: '#C9BAFF'
+  },
   displayContainer: {
     display: 'flex',
     padding: 2,
@@ -12,7 +24,6 @@ export default StyleSheet.create({
   },
   displayTextInput: {
     textAlign: 'right',
-    height: '27vh',
     paddingRight: 60,
   },
   calcPadContainer: {
@@ -24,6 +35,6 @@ export default StyleSheet.create({
     flexDirection: 'row'
   },
   historyPadContainer: {
-    
+
   }
 });

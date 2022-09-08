@@ -4,6 +4,7 @@ import { useToast } from 'react-native-fast-toast';
 import { TextInput } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import calculatorView from '../styles/calculator-view';
 
@@ -47,25 +48,35 @@ const CalculatorView = () => {
 
   return (
     <View style={calculatorView.content}>
-      <View style={calculatorView.displayContainer}>
-        <TextInput
-          style={calculatorView.displayTextInput}
-          mode='outlined'
-          multiline={true}
-          onChange={(e) => setEquation(e.nativeEvent.text)}
-          value={equation}
-          autoComplete='off'
-          onFocus={() => Keyboard.dismiss()}
-        />
+      <View style={calculatorView.topContainer}>
+        <View style={calculatorView.displayContainer}>
+          <TextInput
+            style={calculatorView.displayTextInput}
+            mode='outlined'
+            multiline={true}
+            onChange={(e) => setEquation(e.nativeEvent.text)}
+            value={equation}
+            autoComplete='off'
+            onFocus={() => Keyboard.dismiss()}
+          />
+        </View>
       </View>
-      <View style={calculatorView.historyPadContainer}>
-        <HistoryPadComponent onClick={console.log}/>
-      </View>
-      <View style={calculatorView.returnTypePadContainer}>
-        <ReturnTypePadComponent onClick={console.log}/>
-      </View>
-      <View style={calculatorView.calcPadContainer}>
-        <CalculatorPadComponent onClick={handleClick} buttons={userType.buttons} />
+      <LinearGradient 
+        colors={['#A430FF', '#F318AD', '#FF2171']}  
+        style={calculatorView.hr}
+        start={{x: 0, y: 1}}
+        end={{x: 1, y: 1}}
+      />
+      <View style={calculatorView.bottomContainer}>
+        <View style={calculatorView.historyPadContainer}>
+          <HistoryPadComponent onClick={console.log}/>
+        </View>
+        <View style={calculatorView.returnTypePadContainer}>
+          <ReturnTypePadComponent onClick={console.log}/>
+        </View>
+        <View style={calculatorView.calcPadContainer}>
+          <CalculatorPadComponent onClick={handleClick} buttons={userType.buttons} />
+        </View>
       </View>
     </View>
   );
