@@ -7,7 +7,8 @@ export default StyleSheet.create({
   },
   topContainer: {
     height: '27.25vh',
-    backgroundColor: '#EAEBED'
+    backgroundColor: '#EAEBED',
+    padding: '1rem'
   },
   hr: {
     height: '1.5vh',
@@ -15,7 +16,8 @@ export default StyleSheet.create({
   },
   bottomContainer: {
     height: '71.25vh',
-    backgroundColor: '#C9BAFF'
+    backgroundColor: '#C9BAFF',
+    padding: '1rem'
   },
   displayContainer: {
     display: 'flex',

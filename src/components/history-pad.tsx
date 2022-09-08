@@ -15,19 +15,19 @@ const ReturnTypePadComponent = ({ onClick }: props) => {
   return (
     <View>
       <View style={historyPad.row}>
-        <Button style={historyPad.clock}>
+        <View style={historyPad.clock}>
           <Clock size={32}/>
-        </Button>
-        <Button style={historyPad.backspace}>
+        </View>
+        <View style={historyPad.backspace}>
           <Backspace size={32}/>
-        </Button>
+        </View>
         <View style={historyPad.historyItemsContainer}>
-          <Button style={historyPad.historyItem}>
+          <View style={historyPad.historyItem}>
             <Text>337d12h</Text>
-          </Button>
-          <Button style={historyPad.historyItem}>
+          </View>
+          <View style={historyPad.historyItem}>
             <Text>337d12h</Text>
-          </Button>
+          </View>
         </View>
       </View>
     </View>
