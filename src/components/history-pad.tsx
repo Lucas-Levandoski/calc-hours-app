@@ -25,6 +25,9 @@ const ReturnTypePadComponent = ({ onClick }: props) => {
           <Button style={historyPad.historyItem}>
             <Text>337d12h</Text>
           </Button>
+          <Button style={historyPad.historyItem}>
+            <Text>337d12h</Text>
+          </Button>
         </View>
       </View>
     </View>

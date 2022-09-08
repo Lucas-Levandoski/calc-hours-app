@@ -22,10 +22,13 @@ export default StyleSheet.create({
     borderWidth: 3,
     borderColor: '#937ce6',
     borderRadius: 20,
-    padding: 0
+    padding: 0,
+    margin: 2
   },
   historyItemsContainer: {
-    marginHorizontal: '4rem',
-    marginVertical: 'auto'
+    display: 'flex',
+    flexDirection: 'row',
+    marginHorizontal: '3.5rem',
+    marginVertical: 'auto',
   }
 });
