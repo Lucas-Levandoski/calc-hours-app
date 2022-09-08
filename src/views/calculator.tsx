@@ -3,9 +3,10 @@ import { Keyboard, View } from 'react-native';
 import { ReturnTypes } from '../utils/enums';
 import { SubmitEquation } from '../utils/submit-equation';
 import CalculatorPadComponent from '../components/calculator-pad';
+import ReturnTypePadComponent from '../components/return-type-pad';
 import calculatorView from '../styles/calculator-view';
 import { useToast } from 'react-native-fast-toast';
-import { TextInput, withTheme } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 
@@ -41,10 +42,6 @@ const CalculatorView = () => {
     }
   };
 
-  // const backSpace = () => {
-  //   setEquation(equation.slice(0, -1));
-  // };
-
   return (
     <View style={calculatorView.content}>
       <View style={calculatorView.displayContainer}>
@@ -58,7 +55,13 @@ const CalculatorView = () => {
           onFocus={() => Keyboard.dismiss()}
         />
       </View>
-      <View style={calculatorView.padContainer}>
+      <View style={calculatorView.historyPadContainer}>
+        
+      </View>
+      <View style={calculatorView.returnTypePadContainer}>
+        <ReturnTypePadComponent onClick={console.log}/>
+      </View>
+      <View style={calculatorView.calcPadContainer}>
         <CalculatorPadComponent onClick={handleClick} buttons={userType.buttons} />
       </View>
     </View>
