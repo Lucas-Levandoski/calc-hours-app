@@ -4,11 +4,10 @@ import { withTheme } from 'react-native-paper';
 import { Theme } from 'react-native-paper/lib/typescript/types';
 
 type props = {
-  onClick: (value: string) => void;
   theme: Theme;
 };
 
-const ReturnTypePadComponent = ({ onClick }: props) => {
+const ReturnTypePadComponent = (props: props) => {
   return (
     <View>
       <TextInput

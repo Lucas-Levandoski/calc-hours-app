@@ -13,13 +13,11 @@ export default StyleSheet.create({
   clock: {
     position: 'absolute',
     left: 0,
-    top: '0.5rem'
 
   },
   backspace: {
     position: 'absolute',
     right: 0,
-    top: '0.5rem'
   },
   historyItem: {
     borderStyle: 'solid',
@@ -27,13 +25,16 @@ export default StyleSheet.create({
     borderColor: '#937ce6',
     borderRadius: 20,
     paddingHorizontal: '0.6rem',
-    paddingVertical: '0.2rem',
-    margin: 2
+    marginHorizontal: '0.2rem',
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   historyItemsContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginHorizontal: '3.5rem',
-    marginVertical: 'auto',
+    marginHorizontal: '2.5rem',
+    marginTop: 0,
+    marginBottom: 'auto'
   }
 });

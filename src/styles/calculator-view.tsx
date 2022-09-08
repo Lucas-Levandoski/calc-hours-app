@@ -38,5 +38,10 @@ export default StyleSheet.create({
   },
   historyPadContainer: {
 
+  },
+  configBarContainer: {
+    position: 'absolute',
+    top: '1rem',
+    left: '1rem'
   }
 });
