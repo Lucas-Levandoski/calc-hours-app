@@ -14,6 +14,7 @@ import CalculatorPadComponent from '../components/calculator-pad';
 import ReturnTypePadComponent from '../components/return-type-pad';
 import HistoryPadComponent from '../components/history-pad';
 import CalculatorDisplay from '../components/calculator-display';
+import ConfigBar from '../components/config-bar';
 
 
 const CalculatorView = () => {
@@ -50,8 +51,11 @@ const CalculatorView = () => {
   return (
     <View style={calculatorView.content}>
       <View style={calculatorView.topContainer}>
+        <View style={calculatorView.configBarContainer}>
+          <ConfigBar />
+        </View>
         <View style={calculatorView.displayContainer}>
-          <CalculatorDisplay onClick={console.log} />
+          <CalculatorDisplay />
         </View>
       </View>
       <LinearGradient 
